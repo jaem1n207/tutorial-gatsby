@@ -1,6 +1,7 @@
-import { css } from '@emotion/react';
+import { css, Global } from '@emotion/react';
 import { Link } from 'gatsby';
 import React from 'react';
+import Reset from '../styles/reset';
 
 // data
 const routes = [
@@ -21,6 +22,7 @@ const Layout = ({ pageTitle, children }) => {
     <div css={Container}>
       <title>{pageTitle}</title>
 
+      <Global styles={Reset} />
       <nav>
         <ul css={NavLinks}>
           {routes.map((route) => (

@@ -1,14 +1,17 @@
-import { Global } from '@emotion/react';
+import { StaticImage } from 'gatsby-plugin-image';
 import * as React from 'react';
+
 import Layout from '../components/layout';
-import Reset from '../styles/reset';
 
 const IndexPage = () => {
   return (
     <>
-      <Global styles={Reset} />
       <Layout pageTitle="Home Page">
         <p>I'm Jaemin.</p>
+        <StaticImage
+          alt="Clifford, a reddish-brown pitbull, posing on a couch and looking stoically at the camera"
+          src="../images/icon.png"
+        />
       </Layout>
     </>
   );
