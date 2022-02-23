@@ -19,5 +19,6 @@ module.exports = {
     },
     'gatsby-plugin-mdx',
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-react-helmet`,
   ],
 };

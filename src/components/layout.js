@@ -1,6 +1,8 @@
 import { css, Global } from '@emotion/react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Helmet } from 'react-helmet';
 import React from 'react';
+
 import Reset from '../styles/reset';
 
 // data
@@ -36,12 +38,16 @@ const Layout = ({ pageTitle, children }) => {
 
   return (
     <div css={Container}>
-      <title>
-        {pageTitle} | {data.site.siteMetadata.title}
-      </title>
-      <header css={SiteTitle}>{data.site.siteMetadata.title}</header>
+      <Helmet defer={false}>
+        <title>
+          {pageTitle} | {data.site.siteMetadata.title}
+        </title>
+        <meta name="description" content={pageTitle ?? data.site.siteMetadata.title} />
+      </Helmet>
 
       <Global styles={Reset} />
+
+      <header css={SiteTitle}>{data.site.siteMetadata.title}</header>
       <nav>
         <ul css={NavLinks}>
           {routes.map((route) => (
