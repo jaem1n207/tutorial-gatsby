@@ -1,7 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Tutorial Gatsby`,
-    siteUrl: `https://www.yourdomain.tld`,
+    author: 'Jaemin Lee',
+    description: 'This site is test gatsby tutorial page',
+    siteUrl: `https://tutorialgatsbymain57482.gatsbyjs.io/`,
   },
   plugins: [
     'gatsby-plugin-emotion',
@@ -16,5 +18,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-mdx',
+    `gatsby-plugin-sitemap`,
   ],
 };
