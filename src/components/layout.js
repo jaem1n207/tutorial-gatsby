@@ -1,23 +1,39 @@
+import { css } from '@emotion/react';
 import { Link } from 'gatsby';
 import React from 'react';
 
+// data
+const routes = [
+  {
+    id: '1',
+    text: 'Home',
+    url: '/',
+  },
+  {
+    id: '2',
+    text: 'About',
+    url: '/about',
+  },
+];
+
 const Layout = ({ pageTitle, children }) => {
   return (
-    <div>
+    <div css={Container}>
       <title>{pageTitle}</title>
 
       <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
+        <ul css={NavLinks}>
+          {routes.map((route) => (
+            <li key={route.id} css={NavLinkItem}>
+              <Link css={NavLinkText} to={route.url}>
+                {route.text}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
       <main>
-        <h1>{pageTitle}</h1>
+        <h1 css={Heading}>{pageTitle}</h1>
         {children}
       </main>
     </div>
@@ -25,3 +41,32 @@ const Layout = ({ pageTitle, children }) => {
 };
 
 export default Layout;
+
+const Container = css`
+  margin: auto;
+  max-width: 500px;
+  font-family: sans-serif;
+`;
+
+const Heading = css`
+  color: rebeccapurple;
+`;
+
+const NavLinks = css`
+  display: flex;
+`;
+
+const NavLinkItem = css`
+  padding-right: 2rem;
+  &::marker {
+    display: list-item;
+    content: '#' counter(link) ' ';
+    color: lightsalmon;
+    font-weight: bold;
+  }
+`;
+
+const NavLinkText = css`
+  counter-increment: link;
+  color: #000;
+`;
