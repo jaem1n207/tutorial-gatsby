@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Tutorial Gatsby`,
+    title: `SEO 100`,
     author: 'Jaemin Lee',
     description: 'This site is test gatsby tutorial page',
     siteUrl: `https://tutorialgatsbymain57482.gatsbyjs.io/`,
@@ -15,6 +15,13 @@ module.exports = {
       options: {
         name: `blog`,
         path: `${__dirname}/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/images`,
       },
     },
     'gatsby-plugin-mdx',

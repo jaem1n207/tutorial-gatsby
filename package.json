@@ -20,6 +20,7 @@
     "@mdx-js/mdx": "v1",
     "@mdx-js/react": "v1",
     "gatsby": "^4.7.2",
+    "gatsby-background-image": "^1.6.0",
     "gatsby-plugin-emotion": "^7.7.0",
     "gatsby-plugin-image": "^2.8.0",
     "gatsby-plugin-mdx": "^3.8.0",
@@ -28,6 +29,7 @@
     "gatsby-plugin-sitemap": "^5.8.0",
     "gatsby-source-filesystem": "^4.8.0",
     "gatsby-transformer-sharp": "^4.8.0",
+    "gbimage-bridge": "^0.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0"

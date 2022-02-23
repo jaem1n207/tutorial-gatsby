@@ -6,7 +6,7 @@ import Layout from '../../components/layout';
 
 const BlogPost = ({ data }) => {
   const { mdx } = data;
-
+  console.log('success', mdx.frontmatter.hero_image);
   const image = getImage(mdx.frontmatter.hero_image);
 
   return (

@@ -91,6 +91,7 @@ const Reset = css`
   mark,
   audio,
   video {
+    color: white;
     vertical-align: baseline;
   }
   /* HTML5 display-role reset for older browsers */
@@ -109,7 +110,9 @@ const Reset = css`
   }
 
   body {
+    margin: 0px;
     counter-reset: link;
+    background-color: #828282;
   }
 `;
 

@@ -77,13 +77,13 @@ const Container = css`
 
 const SiteTitle = css`
   font-size: 3rem;
-  color: gray;
+  color: #ce1212;
   font-weight: 700;
   margin: 3rem 0;
 `;
 
 const Heading = css`
-  color: rebeccapurple;
+  color: #ff1617;
 `;
 
 const NavLinks = css`
@@ -102,5 +102,5 @@ const NavLinkItem = css`
 
 const NavLinkText = css`
   counter-increment: link;
-  color: #000;
+  color: #fef9ef;
 `;
