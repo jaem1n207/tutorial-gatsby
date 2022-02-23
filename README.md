@@ -7,6 +7,7 @@
 ## Tech Requirement (Tech Stack)
 
 - gatsby new
+- dynamic image
 - gatsby-source-filesystem
 - MDX
 - File System Route API
