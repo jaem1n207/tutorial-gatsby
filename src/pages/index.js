@@ -1,26 +1,26 @@
-import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+import { css } from '@emotion/react';
+import { getImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { convertToBgImage } from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image';
 
 import Layout from '../components/layout';
-import { css } from '@emotion/react';
 
 const IndexPage = () => {
   const { backgroundImage } = useStaticQuery(
     graphql`
       query {
         backgroundImage: file(relativePath: { eq: "galaxy-background.jpg" }) {
-          childrenImageSharp {
-            gatsbyImageData(width: 2000, quality: 50, webpOptions: { quality: 70 })
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED, width: 2000, quality: 50, webpOptions: { quality: 70 })
           }
         }
       }
     `
   );
 
-  const pluginImage = getImage(backgroundImage.childrenImageSharp[0]);
+  const pluginImage = getImage(backgroundImage);
 
   const bgImage = convertToBgImage(pluginImage);
 
@@ -28,11 +28,7 @@ const IndexPage = () => {
     <>
       <Layout pageTitle="Home Page">
         <p>I'm Jaemin.</p>
-        <BackgroundImage css={Pos} Tag="section" {...bgImage} preserveStackingContext>
-          <div style={{ minHeight: 800, minWidth: 500 }}>
-            <GatsbyImage image={bgImage} alt={'galaxy-background-image'} />
-          </div>
-        </BackgroundImage>
+        <BackgroundImage css={Pos} Tag="section" {...bgImage} preserveStackingContext />
       </Layout>
     </>
   );
@@ -48,4 +44,5 @@ const Pos = css`
   opacity: 60%;
   height: 100vh;
   width: 100%;
+  background-size: cover;
 `;
